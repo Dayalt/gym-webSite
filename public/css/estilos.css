@@ -23,20 +23,34 @@ body{
     font-family: 'Poppins', sans-serif;
     font-size: 90%;
     counter-reset: miContador;
+    position: relative;
 }
 
 nav{
+    position: absolute;
+    top: 1.5rem;
     width: 100%;
+    height: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul{
+    width: 8rem;
     display: flex;
     justify-content: flex-end;
-    height: 40px;
     align-items: center;
+    margin-right: 3px;
+    gap: 3px;
+    list-style: none;
+    background-color: #08080869;
 }
 
 nav a{
     margin: 3px;
     text-decoration: none;
-    color: black;
+    color: #fff;
 }
 /* --------------------------------------------------- */
 .activo{
@@ -46,10 +60,9 @@ nav a{
  /* --------------------------------------------------- */
 
 nav img{
-    width: 2%;
-    max-width: 100%;
+    width: 3rem;
     height: auto;
-    margin-right: auto;
+    margin-left: 6px;
 }
 
 nav a:hover{
@@ -152,6 +165,7 @@ main{
 
 .division img:hover{
     opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .nosotros p{
@@ -198,16 +212,16 @@ article{
 /* ICONO DE WHATSAPP */
 #chat{
     position: fixed;
-    left: 95%;
+    left: 90%;
     top: 88%;
-    background-image: linear-gradient(rgba(226, 127, 14, 0.5),
-     rgba(255,255,255,0.5)), url(../imagen/chat.png);
+    background-image: url(../imagen/chat.png);
     background-size: contain;
     background-repeat: no-repeat;
     width: 50px;
     height: 50px;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.494);
 }
 
 /* --------------------------------------------------- */
@@ -229,12 +243,10 @@ footer p:first-child {
     font-weight: bold;
 }
 
+
 /*Media queries tablet*/
 @media screen and (max-width: 768px) {
-    nav img{
-        width: 10%;
-        max-width: 100%;
-    }
+
    .division{
         flex-direction: column;
     }
@@ -247,7 +259,19 @@ footer p:first-child {
     }
 
     #chat{
-        left: 80%;
+        left: 85%;
         top: 80%;
+    }
+    
+    footer{
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+
+    }
+    footer ul:last-child{
+       width: 80%;
+       margin: 8px auto;
+       text-align: center;
     }
 }
